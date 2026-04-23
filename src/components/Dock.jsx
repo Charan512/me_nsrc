@@ -17,9 +17,9 @@ function DockItem({ icon: Icon, label, href, mouseX }) {
       href={href}
       ref={ref}
       style={{ width }}
-      className="relative flex aspect-square items-center justify-center rounded-full bg-slate-800/80 backdrop-blur-md border border-white/10 hover:bg-accent/20 hover:border-accent/50 transition-colors group shadow-lg"
+      className="relative flex aspect-square items-center justify-center rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:bg-accent hover:border-accent hover:scale-110 transition-all duration-300 group shadow-lg"
     >
-      <Icon className="w-1/2 h-1/2 text-slate-300 group-hover:text-white transition-colors" />
+      <Icon className="w-1/2 h-1/2 text-white/80 group-hover:text-white transition-colors" />
       <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-accent text-white font-bold text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
         {label}
       </span>
@@ -34,7 +34,7 @@ export default function Dock({ items }) {
     <div
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      className="flex items-center justify-center gap-4 px-6 py-4 rounded-3xl bg-slate-900/80 backdrop-blur-2xl border border-white/20 shadow-[0_0_40px_rgba(0,0,0,0.8)]"
+      className="flex items-center justify-center gap-4 px-6 py-4 rounded-3xl bg-bg2/90 backdrop-blur-3xl border border-white/20 shadow-[0_0_50px_rgba(59,158,255,0.2)] ring-1 ring-white/5"
     >
       {items.map((item, i) => (
         <DockItem key={i} {...item} mouseX={mouseX} />
