@@ -12,31 +12,31 @@ const LinkedinIcon = () => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 px-4 md:px-10 max-w-4xl mx-auto text-center relative z-10 pointer-events-auto">
+    <section id="contact" className="py-28 px-6 md:px-12 max-w-4xl mx-auto text-center relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-100px" }}
       >
         <h2 className="text-4xl md:text-6xl font-bold mb-6">Got a problem worth solving?</h2>
-        <p className="text-xl text-[var(--text-mid)] mb-2">
+        <p className="text-xl text-txt-mid mb-2">
           I'm open to full-stack projects, ML work, UI builds & interesting collabs.
         </p>
-        <p className="text-sm text-[var(--text-dim)] mb-12 group relative inline-block cursor-help border-b border-dashed border-[var(--bg2)]">
+        <p className="text-sm text-txt-dim mb-12 group relative inline-block cursor-help border-b border-dashed border-bg3">
           I respond fast. Always.
-          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg">
             Unlike Subaru, I reply on the first timeline
           </span>
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="mailto:nvsk72@gmail.com" className="px-8 py-4 rounded-xl bg-[var(--blue)] text-white font-bold hover:bg-blue-500 transition-all flex items-center justify-center gap-3">
+          <a href="mailto:nvsk72@gmail.com" className="px-8 py-4 rounded-xl bg-accent text-white font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(59,158,255,0.2)] flex items-center justify-center gap-3">
             <Mail className="w-5 h-5" /> nvsk72@gmail.com
           </a>
-          <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-[var(--bg2)] border border-[var(--blue-dim)] text-[var(--text)] font-bold hover:bg-[var(--bg3)] transition-all flex items-center justify-center gap-3">
+          <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-bg2 border border-accent-dim/50 text-txt font-bold hover:bg-bg3 hover:border-accent-dim transition-all flex items-center justify-center gap-3">
             <LinkedinIcon /> LinkedIn
           </a>
-          <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-[var(--bg2)] border border-[var(--blue-dim)] text-[var(--text)] font-bold hover:bg-[var(--bg3)] transition-all flex items-center justify-center gap-3">
+          <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-bg2 border border-accent-dim/50 text-txt font-bold hover:bg-bg3 hover:border-accent-dim transition-all flex items-center justify-center gap-3">
             <GithubIcon /> GitHub
           </a>
         </div>
