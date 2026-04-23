@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-bg text-txt font-sans relative pb-24 md:pb-0 overflow-x-hidden">
+    <div className="min-h-screen w-full bg-bg text-txt font-sans relative pb-24 md:pb-0">
       {/* Background Effect */}
       <SplashCursor />
 
