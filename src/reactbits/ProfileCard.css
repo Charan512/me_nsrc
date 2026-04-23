@@ -60,8 +60,6 @@
 .pc-card {
   height: 80svh;
   max-height: 540px;
-  max-width: 100%;
-  margin: 0 auto;
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
@@ -90,6 +88,9 @@
 .pc-card-shell {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pc-card * {
@@ -248,13 +249,15 @@
 .pc-avatar-content {
   mix-blend-mode: luminosity;
   overflow: visible;
-  transform: translateZ(2);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-mask-image: radial-gradient(ellipse 130% 110% at 50% 100%, black 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse 130% 110% at 50% 100%, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 130% 110% at 50% 100%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(ellipse 130% 110% at 50% 100%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
 }
 
 .pc-avatar-content .avatar {
+  display: block;
   height: 85%;
   width: auto;
   max-width: none;
@@ -264,6 +267,7 @@
   transform-origin: 50% 100%;
   transform: translateX(calc(-50% + (var(--pointer-from-left) - 0.5) * 6px)) translateZ(0)
     scaleY(calc(1 + (var(--pointer-from-top) - 0.5) * 0.02)) scaleX(calc(1 + (var(--pointer-from-left) - 0.5) * 0.01));
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: transform;
   transition: transform 120ms ease-out;
