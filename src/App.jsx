@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { GiTrophyCup } from 'react-icons/gi';
+import { PiMedalFill } from 'react-icons/pi';
+import { RiAwardLine } from 'react-icons/ri';
 import SplashCursor from './reactbits/SplashCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,14 +15,14 @@ function App() {
     <div className="min-h-screen bg-bg text-txt font-sans relative">
       {/* Background Effect */}
       <SplashCursor />
-      
+
       {/* Navigation Dock */}
       <Navbar />
 
       {/* Main Content */}
       <main className="relative z-10">
         <Hero />
-        
+
         {/* About Section */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 py-28" id="about">
           <motion.div
@@ -41,7 +44,7 @@ function App() {
                 </span>
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-bg2 border border-white/10 p-6 rounded-2xl text-center hover:border-accent-dim/40 transition-all duration-300">
                 <div className="text-3xl font-bold text-white mb-2">Full-Stack</div>
@@ -77,7 +80,7 @@ function App() {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Experience & Achievements</h2>
             <div className="h-1 w-20 bg-accent rounded-full mb-12"></div>
-            
+
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Experience */}
               <div className="flex flex-col gap-6">
@@ -98,20 +101,20 @@ function App() {
                 <div className="bg-bg2 border border-accent-dim/30 p-8 rounded-2xl relative overflow-hidden group hover:border-accent-dim/60 transition-all duration-300">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/8 to-transparent rounded-2xl pointer-events-none"></div>
                   <div className="relative z-10">
-                    <div className="text-accent font-bold mb-1">🥇 National Winner</div>
+                    <div className="text-accent font-bold mb-1 flex items-center gap-2"><GiTrophyCup className="text-yellow-400 text-lg" /> National Winner</div>
                     <h3 className="text-xl font-bold text-white mb-2">Text Sprouts, E-Summit 2K26</h3>
                     <p className="text-txt-dim">1st place, National Level Project Expo — Supply Chain Management solution</p>
                   </div>
                 </div>
-                
+
                 <div className="bg-bg2 border border-white/10 p-8 rounded-2xl hover:border-accent-dim/40 transition-all duration-300">
-                  <div className="text-white font-bold mb-1">🥈 National Runner-up</div>
+                  <div className="text-white font-bold mb-1 flex items-center gap-2"><PiMedalFill className="text-slate-300 text-lg" /> National Runner-up</div>
                   <h3 className="text-xl font-bold text-white mb-2">Smart India Hackathon 2025</h3>
                   <p className="text-txt-dim">National level finalist (Dehradun) — innovative problem-solving & technical execution</p>
                 </div>
 
                 <div className="bg-bg2 border border-white/10 p-8 rounded-2xl hover:border-accent-dim/40 transition-all duration-300">
-                  <div className="text-white font-bold mb-1">🏅 Finalist</div>
+                  <div className="text-white font-bold mb-1 flex items-center gap-2"><RiAwardLine className="text-amber-600 text-lg" /> Finalist</div>
                   <h3 className="text-xl font-bold text-white mb-2">Prajwalan 2025</h3>
                   <p className="text-txt-dim">Top national team — solution architecture & prototype implementation</p>
                 </div>
