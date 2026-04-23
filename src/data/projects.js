@@ -7,6 +7,7 @@ export const projects = [
     highlightTags: ["FastAPI", "ML"],
     year: "2024",
     github: "https://github.com/Charan512",
+    demoUrl: "https://ayusethu-ui.vercel.app",
     featured: true,
   },
   {
@@ -17,6 +18,7 @@ export const projects = [
     highlightTags: ["FastAPI", "NLP"],
     year: "2024",
     github: "https://github.com/Charan512",
+    demoUrl: "https://soul-connect-one.vercel.app",
     featured: false,
   },
   {
@@ -27,6 +29,7 @@ export const projects = [
     highlightTags: ["Next.js", "OCR"],
     year: "2025",
     github: "https://github.com/Charan512",
+    demoUrl: "https://smart-spend-chi.vercel.app",
     featured: false,
   },
   {
@@ -37,6 +40,7 @@ export const projects = [
     highlightTags: ["React", "Node.js"],
     year: "2026",
     github: "https://github.com/Charan512",
+    demoUrl: "https://prajwalan-demo.vercel.app", // Replace with your actual working URL
     featured: false,
   },
   {
