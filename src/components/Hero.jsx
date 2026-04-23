@@ -4,7 +4,7 @@ import ProfileCard from '../reactbits/ProfileCard';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-32 px-6 md:px-12">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-48 px-6 md:px-12">
       <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-12 items-center">
         
         {/* Text Content */}
@@ -12,17 +12,17 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col gap-6 z-10"
+          className="flex flex-col gap-10 z-10"
         >
-          <div className="font-mono text-accent text-sm tracking-widest">
+          <div className="font-mono text-accent text-sm tracking-widest uppercase">
             // full-stack developer · ml engineer
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-normal leading-snug">
             Sri Ram <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400">Charan.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-txt-mid max-w-xl leading-relaxed">
+          <p className="text-lg md:text-xl text-txt-mid max-w-2xl leading-loose">
             I build full-stack products, ML pipelines, and REST APIs — from polished UIs to intelligent backends. Calm under pressure, precise in execution.{' '}
             <span className="group relative inline-block cursor-help border-b border-dashed border-txt-dim">
               Relentless in iteration.
@@ -32,7 +32,7 @@ export default function Hero() {
             </span>
           </p>
 
-          <div className="flex flex-wrap gap-3 mt-4">
+          <div className="flex flex-wrap gap-4 mt-2">
             {['React.js', 'Node.js', 'FastAPI', 'Flutter', 'TensorFlow', 'PostgreSQL', 'MongoDB'].map(skill => (
               <span key={skill} className="px-4 py-2 rounded-full bg-bg2 border border-white/10 text-sm font-mono text-txt-mid hover:border-accent-dim hover:text-accent transition-all duration-300">
                 {skill}

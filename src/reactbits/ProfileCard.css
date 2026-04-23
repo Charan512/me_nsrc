@@ -178,7 +178,7 @@
 
 .pc-card:hover .pc-shine,
 .pc-card.active .pc-shine {
-  filter: brightness(0.85) contrast(1.5) saturate(0.5);
+  /* Keep the background stable on hover without blowing out the brightness */
   animation-play-state: paused;
 }
 
@@ -186,7 +186,8 @@
 .pc-card.active .pc-shine::before,
 .pc-card:hover .pc-shine::after,
 .pc-card.active .pc-shine::after {
-  opacity: 1;
+  /* Removed opacity: 1 to prevent the blinding hover glare effect */
+  opacity: 0;
 }
 
 .pc-shine::before {
@@ -247,11 +248,14 @@
   overflow: visible;
   transform: translateZ(2);
   backface-visibility: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 130% 110% at 50% 100%, black 60%, transparent 100%);
+  mask-image: radial-gradient(ellipse 130% 110% at 50% 100%, black 60%, transparent 100%);
 }
 
 .pc-avatar-content .avatar {
-  width: 100%;
-  height: 88%;
+  height: 85%;
+  width: auto;
+  max-width: none;
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -261,10 +265,6 @@
   backface-visibility: hidden;
   will-change: transform;
   transition: transform 120ms ease-out;
-  object-fit: cover;
-  object-position: bottom center;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
 }
 
 .pc-avatar-content::before {

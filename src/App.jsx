@@ -16,6 +16,11 @@ function App() {
       {/* Background Effect */}
       <SplashCursor />
 
+      {/* Brand Logo */}
+      <a href="#home" className="fixed top-6 left-6 md:top-8 md:left-10 z-50 font-mono text-2xl font-black tracking-tighter text-white hover:text-accent transition-colors duration-300 pointer-events-auto mix-blend-difference">
+        .src
+      </a>
+
       {/* Navigation Dock */}
       <Navbar />
 
@@ -81,42 +86,96 @@ function App() {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Experience & Achievements</h2>
             <div className="h-1 w-20 bg-accent rounded-full mb-12"></div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Experience */}
-              <div className="flex flex-col gap-6">
-                <div className="bg-bg2 border border-white/10 p-8 rounded-2xl hover:border-accent-dim/40 transition-all duration-300 group">
-                  <div className="text-accent font-mono text-sm mb-2">Mar 2025 – Jun 2025</div>
-                  <h3 className="text-2xl font-bold text-white mb-1">AI Intern</h3>
-                  <div className="text-txt-mid mb-4">Adverk Technologies Pvt. Ltd. · Remote</div>
-                  <ul className="text-txt-dim list-disc ml-4 space-y-2">
-                    <li>Trained and evaluated supervised ML models on real-world data</li>
-                    <li>Data preprocessing and feature engineering to improve model performance</li>
-                    <li>Built analytical dashboards and reports using MS Power BI</li>
-                  </ul>
+            <div className="grid lg:grid-cols-2 gap-16">
+              {/* Experience Timeline */}
+              <div>
+                <h3 className="text-2xl font-mono text-txt-mid mb-8 flex items-center gap-3">
+                  <span className="text-accent">/</span> Career Track
+                </h3>
+                <div className="relative pl-8 border-l border-white/10 space-y-12 ml-4">
+                  
+                  {/* Experience 1 */}
+                  <div className="relative group">
+                    <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
+                    <div className="bg-bg2 border border-white/5 p-8 rounded-3xl group-hover:border-accent/30 transition-all duration-300 shadow-2xl">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent font-mono text-xs mb-6 border border-accent/20">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        Mar 2025 – Jun 2025
+                      </div>
+                      <h4 className="text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">AI Intern</h4>
+                      <div className="text-txt-mid font-medium mb-6">Adverk Technologies Pvt. Ltd. · Remote</div>
+                      <ul className="text-txt-dim space-y-4">
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Trained and evaluated supervised ML models on real-world data</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Engineered robust data preprocessing pipelines to improve model performance</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="text-accent mt-1">▹</span>
+                          <span className="leading-relaxed">Built analytical dashboards and interactive reports using MS Power BI</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
               {/* Achievements */}
-              <div className="flex flex-col gap-6">
-                <div className="bg-bg2 border border-accent-dim/30 p-8 rounded-2xl relative overflow-hidden group hover:border-accent-dim/60 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/8 to-transparent rounded-2xl pointer-events-none"></div>
-                  <div className="relative z-10">
-                    <div className="text-accent font-bold mb-1 flex items-center gap-2"><GiTrophyCup className="text-yellow-400 text-lg" /> National Winner</div>
-                    <h3 className="text-xl font-bold text-white mb-2">Text Sprouts, E-Summit 2K26</h3>
-                    <p className="text-txt-dim">1st place, National Level Project Expo — Supply Chain Management solution</p>
+              <div>
+                <h3 className="text-2xl font-mono text-txt-mid mb-8 flex items-center gap-3">
+                  <span className="text-accent">/</span> Hall of Fame
+                </h3>
+                <div className="flex flex-col gap-6">
+                  
+                  {/* Ach 1 */}
+                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(250,204,21,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-yellow-400 to-yellow-600"></div>
+                    <div className="absolute -right-4 -top-4 text-yellow-400/5 group-hover:text-yellow-400/10 transition-colors duration-500">
+                      <GiTrophyCup className="text-9xl transform -rotate-12" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 text-yellow-400 font-bold text-xs mb-5 border border-yellow-400/20">
+                        <GiTrophyCup className="text-sm" /> National Winner
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">Text Sprouts, E-Summit 2K26</h4>
+                      <p className="text-txt-dim leading-relaxed">1st place, National Level Project Expo — Developed an innovative Supply Chain Management solution.</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="bg-bg2 border border-white/10 p-8 rounded-2xl hover:border-accent-dim/40 transition-all duration-300">
-                  <div className="text-white font-bold mb-1 flex items-center gap-2"><PiMedalFill className="text-slate-300 text-lg" /> National Runner-up</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Smart India Hackathon 2025</h3>
-                  <p className="text-txt-dim">National level finalist (Dehradun) — innovative problem-solving & technical execution</p>
-                </div>
+                  {/* Ach 2 */}
+                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(148,163,184,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-slate-300 to-slate-500"></div>
+                    <div className="absolute -right-4 -top-4 text-slate-300/5 group-hover:text-slate-300/10 transition-colors duration-500">
+                      <PiMedalFill className="text-9xl transform -rotate-12" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-300/10 text-slate-300 font-bold text-xs mb-5 border border-slate-300/20">
+                        <PiMedalFill className="text-sm" /> National Runner-up
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">Smart India Hackathon 2025</h4>
+                      <p className="text-txt-dim leading-relaxed">National level finalist (Dehradun) — Awarded for innovative problem-solving under extreme time constraints.</p>
+                    </div>
+                  </div>
 
-                <div className="bg-bg2 border border-white/10 p-8 rounded-2xl hover:border-accent-dim/40 transition-all duration-300">
-                  <div className="text-white font-bold mb-1 flex items-center gap-2"><RiAwardLine className="text-amber-600 text-lg" /> Finalist</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Prajwalan 2025</h3>
-                  <p className="text-txt-dim">Top national team — solution architecture & prototype implementation</p>
+                  {/* Ach 3 */}
+                  <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(217,119,6,0.15)]">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-amber-500 to-amber-700"></div>
+                    <div className="absolute -right-4 -top-4 text-amber-500/5 group-hover:text-amber-500/10 transition-colors duration-500">
+                      <RiAwardLine className="text-9xl transform -rotate-12" />
+                    </div>
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-500 font-bold text-xs mb-5 border border-amber-500/20">
+                        <RiAwardLine className="text-sm" /> Finalist
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">Prajwalan 2025</h4>
+                      <p className="text-txt-dim leading-relaxed">Recognized as a top national team — Praised for complex solution architecture and rapid prototype implementation.</p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>

@@ -29,4 +29,24 @@ export const projects = [
     github: "https://github.com/Charan512",
     featured: false,
   },
+  {
+    id: 4,
+    title: "Prajwalan 2K26 Platform",
+    description: "End-to-end Hackathon Management System. Architected an advanced Admin Dashboard featuring a dynamic 3-round evaluation and scoring engine, complete with multi-format CSV reporting and aggregated analytics for real-time leaderboards.",
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Dashboard"],
+    highlightTags: ["React", "Node.js"],
+    year: "2026",
+    github: "https://github.com/Charan512",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Mana Hospitals App",
+    description: "Freelance cross-platform mobile application developed using Flutter. Engineered robust offline walk-in scheduling, dynamic date pickers, strict time-gate validation preventing past-date bookings, and real-time synchronization of the Slot Log.",
+    tags: ["Flutter", "Dart", "Node.js", "MongoDB"],
+    highlightTags: ["Flutter", "Mobile"],
+    year: "2026",
+    github: "https://github.com/Charan512",
+    featured: true,
+  }
 ];
