@@ -12,11 +12,12 @@ export default function Footer() {
           <a href="mailto:nvsk72@gmail.com" className="hover:text-accent transition-colors duration-300">nvsk72@gmail.com</a>
           <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">LinkedIn</a>
           <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">GitHub</a>
+          <a href="https://www.instagram.com/me_nsrc/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors duration-300">Instagram</a>
         </div>
 
-        <div className="text-txt-dim font-mono text-sm group relative cursor-help border-b border-dashed border-bg3">
+        <div className="text-txt-dim font-mono text-base italic group relative cursor-help border-b border-dashed border-accent/20 hover:text-accent transition-colors">
           Built with caffeine & curiosity
-          <span className="absolute bottom-full right-0 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg">
+          <span className="absolute bottom-full right-0 mb-3 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
             // TODO: sleep()
           </span>
         </div>

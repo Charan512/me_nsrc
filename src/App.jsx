@@ -29,55 +29,76 @@ function App() {
         <Hero />
 
         {/* About Section */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 py-28" id="about">
+        <section className="max-w-7xl mx-auto px-6 md:px-12 py-28 bg-bg relative" id="about">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             className="grid lg:grid-cols-2 gap-16 items-center"
           >
-            <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">About Me</h2>
-              <div className="h-1 w-20 bg-accent rounded-full mb-8"></div>
-              <p className="text-lg text-txt-mid leading-relaxed mb-6">
-                I'm Sri Ram Charan Nalla — a 3rd year AI & ML student at SRKR Engineering College. I'm a full-stack developer who builds complete products: polished React UIs, robust Node/Express/FastAPI backends, and ML systems that actually think.
-              </p>
-              <p className="text-lg text-txt-mid leading-relaxed group relative cursor-help inline-block border-b border-dashed border-bg3">
-                Off-screen I'm deep in anime arcs — drawing quiet lessons from loud stories.
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg">
-                  Subaru would've given up. I don't.
-                </span>
-              </p>
+            <div className="pr-0 lg:pr-10">
+              <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">About Me</h2>
+              <div className="h-1.5 w-24 bg-gradient-to-r from-accent to-purple-500 rounded-full mb-10"></div>
+              
+              <div className="pl-6 border-l-2 border-accent/30 space-y-8">
+                <p className="text-xl md:text-2xl text-txt-mid leading-relaxed font-medium">
+                  I'm Sri Ram Charan Nalla — a 3rd year AI & ML student at SRKR Engineering College. I'm a full-stack developer who builds complete products: polished React UIs, robust Node/Express/FastAPI backends, and ML systems that actually think.
+                </p>
+                <p className="text-lg md:text-xl text-txt-dim leading-relaxed">
+                  Off-screen I'm deep in anime arcs — drawing quiet lessons from loud stories.{' '}
+                  <span className="group relative inline-block cursor-help border-b border-dashed border-txt-dim hover:text-accent transition-colors">
+                    Relentless in iteration.
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
+                      Subaru would've given up. I don't.
+                    </span>
+                  </span>
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-bg2 border border-white/10 p-6 rounded-2xl text-center hover:border-accent-dim/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-white mb-2">Full-Stack</div>
-                <div className="text-sm text-txt-dim font-mono">React / Node / FastAPI</div>
-              </div>
-              <div className="bg-bg2 border border-white/10 p-6 rounded-2xl text-center hover:border-accent-dim/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-accent mb-2">ML / DL</div>
-                <div className="text-sm text-txt-dim font-mono">Vision & NLP Pipelines</div>
-              </div>
-              <div className="bg-bg2 border border-white/10 p-6 rounded-2xl text-center hover:border-accent-dim/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-white mb-2">8.87</div>
-                <div className="text-sm text-txt-dim font-mono">Current CGPA</div>
-              </div>
-              <div className="bg-bg2 border border-white/10 p-6 rounded-2xl text-center group relative cursor-help hover:border-accent-dim/40 transition-all duration-300">
-                <div className="text-3xl font-bold text-white mb-2">∞</div>
-                <div className="text-sm text-txt-dim font-mono">Episodes</div>
-                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg">
-                  Power level: over 9000
-                </span>
+            <div className="relative mt-12 lg:mt-0">
+              {/* Subtle background glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 blur-[100px] rounded-full -z-10 pointer-events-none mix-blend-screen"></div>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-accent/50 hover:shadow-[0_20px_40px_-15px_rgba(59,158,255,0.3)] transition-all duration-500 group">
+                  <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-accent group-hover:to-purple-400 transition-all">Full-Stack</div>
+                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">React / Node / FastAPI</div>
+                </div>
+                <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-purple-500/50 hover:shadow-[0_20px_40px_-15px_rgba(168,85,247,0.3)] transition-all duration-500 group">
+                  <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-purple-400 group-hover:to-pink-400 transition-all">ML / DL</div>
+                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Vision & NLP</div>
+                </div>
+                <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)] transition-all duration-500 group">
+                  <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all">8.87</div>
+                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Current CGPA</div>
+                </div>
+                <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center cursor-help hover:-translate-y-2 hover:border-rose-500/50 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)] transition-all duration-500 group relative">
+                  <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-rose-400 group-hover:to-orange-400 transition-all">∞</div>
+                  <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Episodes</div>
+                  <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max bg-rose-500/10 backdrop-blur-xl border border-rose-500/30 text-rose-300 font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
+                    Power level: over 9000
+                  </span>
+                </div>
               </div>
             </div>
           </motion.div>
         </section>
 
+        {/* Section Divider */}
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+        </div>
+
         <Projects />
 
         {/* Experience & Achievements */}
-        <section className="max-w-7xl mx-auto px-6 md:px-12 py-28" id="experience">
+        {/* Section Divider */}
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+        </div>
+
+        <section className="max-w-7xl mx-auto px-6 md:px-12 py-28 bg-bg relative" id="experience">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -181,6 +202,11 @@ function App() {
             </div>
           </motion.div>
         </section>
+
+        {/* Section Divider */}
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          <div className="h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent"></div>
+        </div>
 
         <Contact />
       </main>

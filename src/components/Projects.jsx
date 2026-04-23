@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { projects } from '../data/projects';
 import { GiPlantSeed, GiBrain, GiPayMoney, GiTrophyCup, GiHealthNormal } from 'react-icons/gi';
 
@@ -8,6 +8,7 @@ const projectThemes = {
     gradient: "from-emerald-500/10 to-transparent",
     border: "group-hover:border-emerald-500/50",
     text: "group-hover:text-emerald-400",
+    tagText: "text-emerald-400/50",
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)]",
     iconColor: "text-emerald-500",
   },
@@ -16,6 +17,7 @@ const projectThemes = {
     gradient: "from-rose-500/10 to-transparent",
     border: "group-hover:border-rose-500/50",
     text: "group-hover:text-rose-400",
+    tagText: "text-rose-400/50",
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)]",
     iconColor: "text-rose-500",
   },
@@ -24,6 +26,7 @@ const projectThemes = {
     gradient: "from-cyan-500/10 to-transparent",
     border: "group-hover:border-cyan-500/50",
     text: "group-hover:text-cyan-400",
+    tagText: "text-cyan-400/50",
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(6,182,212,0.3)]",
     iconColor: "text-cyan-500",
   },
@@ -32,6 +35,7 @@ const projectThemes = {
     gradient: "from-violet-500/10 to-transparent",
     border: "group-hover:border-violet-500/50",
     text: "group-hover:text-violet-400",
+    tagText: "text-violet-400/50",
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.3)]",
     iconColor: "text-violet-500",
   },
@@ -40,17 +44,50 @@ const projectThemes = {
     gradient: "from-sky-500/10 to-transparent",
     border: "group-hover:border-sky-500/50",
     text: "group-hover:text-sky-400",
+    tagText: "text-sky-400/50",
     shadow: "hover:shadow-[0_20px_40px_-15px_rgba(14,165,233,0.3)]",
     iconColor: "text-sky-500",
   }
 };
 
 export default function Projects() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = Number(entry.target.dataset.index);
+            setActiveIndex(idx);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+    );
+
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="projects" className="relative z-10">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 pt-28 pb-8">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-        <div className="h-1 w-20 bg-accent rounded-full"></div>
+      <div className="max-w-5xl mx-auto px-6 md:px-12 pt-28 pb-8 flex justify-between items-end">
+        <div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+          <div className="h-1 w-20 bg-accent rounded-full"></div>
+        </div>
+
+        {/* Scroll Counter */}
+        <div className="font-mono text-txt-dim text-sm tracking-widest hidden md:block">
+          <span className="text-white text-2xl font-bold">{String(activeIndex + 1).padStart(2, '0')}</span>
+          <span className="mx-1">/</span>
+          <span>{String(projects.length).padStart(2, '0')}</span>
+        </div>
       </div>
 
       <div className="flex flex-col gap-32 pb-32">
@@ -59,8 +96,10 @@ export default function Projects() {
           const Icon = theme.icon;
 
           return (
-          <div 
-            key={project.id} 
+          <div
+            key={project.id}
+            ref={(el) => (cardRefs.current[index] = el)}
+            data-index={index}
             className="sticky top-[15vh] transition-transform duration-500"
             style={{ zIndex: 10 + index }}
           >
@@ -93,7 +132,7 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-3">
                   {project.tags.map(tag => (
-                    <span key={tag} className={`px-4 py-2 text-xs font-mono rounded-xl bg-bg3 border border-white/5 text-txt-dim transition-all duration-300 group-hover:border-white/10 hover:!border-current ${theme.text}`}>
+                    <span key={tag} className={`px-4 py-2 text-xs font-mono rounded-xl bg-bg3 border border-white/5 transition-all duration-300 group-hover:border-white/10 hover:!border-current ${theme.tagText} ${theme.text}`}>
                       {tag}
                     </span>
                   ))}

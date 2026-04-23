@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const GithubIcon = () => (
@@ -12,33 +13,57 @@ const LinkedinIcon = () => (
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-28 px-6 md:px-12 max-w-4xl mx-auto text-center relative z-10">
+    <section id="contact" className="py-32 px-6 md:px-12 max-w-6xl mx-auto relative z-10">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
+        className="relative group"
       >
-        <h2 className="text-4xl md:text-6xl font-bold mb-6">Got a problem worth solving?</h2>
-        <p className="text-xl text-txt-mid mb-2">
-          I'm open to full-stack projects, ML work, UI builds & interesting collabs.
-        </p>
-        <p className="text-sm text-txt-dim mb-12 group relative inline-block cursor-help border-b border-dashed border-bg3">
-          I respond fast. Always.
-          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg">
-            Unlike Subaru, I reply on the first timeline
-          </span>
-        </p>
+        {/* Glow Aura */}
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-purple-500/20 to-pink-500/20 blur-[100px] -z-10 rounded-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="mailto:nvsk72@gmail.com" className="px-8 py-4 rounded-xl bg-accent text-white font-bold hover:brightness-110 transition-all shadow-[0_0_30px_rgba(59,158,255,0.2)] flex items-center justify-center gap-3">
-            <Mail className="w-5 h-5" /> nvsk72@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-bg2 border border-accent-dim/50 text-txt font-bold hover:bg-bg3 hover:border-accent-dim transition-all flex items-center justify-center gap-3">
-            <LinkedinIcon /> LinkedIn
-          </a>
-          <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-bg2 border border-accent-dim/50 text-txt font-bold hover:bg-bg3 hover:border-accent-dim transition-all flex items-center justify-center gap-3">
-            <GithubIcon /> GitHub
-          </a>
+        <div className="bg-bg2/90 backdrop-blur-2xl border border-white/10 p-12 md:p-24 rounded-[3rem] text-center shadow-2xl overflow-hidden relative">
+          
+          {/* Watermark Icon */}
+          <div className="absolute -right-20 -bottom-20 text-accent/5 pointer-events-none transform -rotate-12 group-hover:scale-110 transition-transform duration-1000">
+            <Mail className="w-96 h-96" />
+          </div>
+
+          <div className="relative z-10">
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/30">
+              Got a problem worth solving?
+            </h2>
+            <p className="text-xl md:text-2xl text-txt-mid mb-6 max-w-2xl mx-auto font-medium">
+              I'm open to full-stack projects, ML work, UI builds & interesting collabs.
+            </p>
+            <p className="text-sm md:text-base text-txt-dim mb-16 inline-block cursor-help border-b border-dashed border-accent/50 hover:text-accent transition-colors relative group/tooltip">
+              I respond fast. Always.
+              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover/tooltip:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover/tooltip:translate-y-0">
+                Unlike Subaru, I reply on the first timeline
+              </span>
+            </p>
+
+            <div className="flex flex-col gap-4 md:gap-5 items-center">
+              {/* Primary CTA — full width emphasis */}
+              <a href="mailto:nvsk72@gmail.com" className="w-full max-w-lg px-10 py-6 rounded-2xl bg-gradient-to-r from-accent to-purple-600 text-white font-extrabold text-lg hover:brightness-125 transition-all shadow-[0_0_40px_rgba(59,158,255,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.6)] hover:-translate-y-1 flex items-center justify-center gap-3">
+                <Mail className="w-6 h-6" /> nvsk72@gmail.com
+              </a>
+              
+              {/* Secondary Buttons — smaller row */}
+              <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                <a href="https://linkedin.com/in/nsrcharan" target="_blank" rel="noopener noreferrer" className="px-6 py-4 rounded-2xl bg-bg border border-white/10 text-white font-bold text-sm hover:bg-white/5 hover:border-[#0A66C2]/50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
+                  <div className="text-txt-dim group-hover/btn:text-[#0A66C2] transition-colors"><LinkedinIcon /></div> LinkedIn
+                </a>
+                <a href="https://github.com/Charan512" target="_blank" rel="noopener noreferrer" className="px-6 py-4 rounded-2xl bg-bg border border-white/10 text-white font-bold text-sm hover:bg-white/5 hover:border-white/50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
+                  <div className="text-txt-dim group-hover/btn:text-white transition-colors"><GithubIcon /></div> GitHub
+                </a>
+                <a href="https://www.instagram.com/me_nsrc/" target="_blank" rel="noopener noreferrer" className="px-6 py-4 rounded-2xl bg-bg border border-white/10 text-white font-bold text-sm hover:bg-white/5 hover:border-[#E1306C]/50 transition-all shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 group/btn">
+                  <FaInstagram className="w-5 h-5 text-txt-dim group-hover/btn:text-[#E1306C] transition-colors" /> Instagram
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>
