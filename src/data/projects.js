@@ -48,7 +48,7 @@ export const projects = [
     id: 5,
     title: "Mana Hospitals App",
     description: "Freelance cross-platform mobile application developed using Flutter. Engineered robust offline walk-in scheduling, dynamic date pickers, strict time-gate validation preventing past-date bookings, and real-time synchronization of the Slot Log.",
-    tags: ["Flutter", "Dart", "Node.js", "MongoDB"],
+    tags: ["Flutter", "Dart", "Node.js", "MongoDB", "Firebase"],
     highlightTags: ["Flutter", "Mobile"],
     year: "2026",
     github: "https://github.com/Charan512",
