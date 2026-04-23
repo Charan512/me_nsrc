@@ -2,9 +2,9 @@
 # testing and screenshots
 screenshot-sections.cjs
 screenshot.js
-*.png
-*.jpg
-*.jpeg
+/*.png
+/*.jpg
+/*.jpeg
 
 # IDE
 .vscode/
