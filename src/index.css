@@ -20,6 +20,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body { 
@@ -27,6 +29,7 @@ body {
   color: var(--color-txt); 
   font-family: var(--font-sans); 
   overflow-x: clip;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);

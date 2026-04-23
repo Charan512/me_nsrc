@@ -58,7 +58,7 @@ function App() {
 
             <div className="relative mt-12 lg:mt-0">
               {/* Subtle background glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 blur-[100px] rounded-full -z-10 pointer-events-none mix-blend-screen"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/5 blur-[100px] rounded-full -z-10 pointer-events-none mix-blend-screen"></div>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-accent/50 hover:shadow-[0_20px_40px_-15px_rgba(59,158,255,0.3)] transition-all duration-500 group">
