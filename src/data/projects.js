@@ -1,0 +1,32 @@
+export const projects = [
+  {
+    id: 1,
+    title: "AyuSethu Ecosystem",
+    description: "Enterprise agricultural supply chain platform with FastAPI ML inference (96.6% accuracy on 92 herbs), Express/MongoDB backend, IPFS pinning, and Flutter voice-first mobile app.",
+    tags: ["FastAPI", "React", "Flutter", "MongoDB", "Express.js", "ML"],
+    highlightTags: ["FastAPI", "ML"],
+    year: "2024",
+    github: "https://github.com/Charan512",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Soul Connect",
+    description: "AI mental health assistant with NLP sentiment/emotion detection, fuzzy logic, LLM responses, real-time chat & emergency alerts.",
+    tags: ["FastAPI", "React", "MongoDB", "NLP", "LLM"],
+    highlightTags: ["FastAPI", "NLP"],
+    year: "2024",
+    github: "https://github.com/Charan512",
+    featured: false,
+  },
+  {
+    id: 3,
+    title: "SmartSpend",
+    description: "Intelligent expense tracker with Next.js 15, FastAPI, Tesseract OCR for receipts, natural language chat inputs, and predictive budgets.",
+    tags: ["Next.js", "FastAPI", "OCR", "SQLAlchemy", "AI"],
+    highlightTags: ["Next.js", "OCR"],
+    year: "2025",
+    github: "https://github.com/Charan512",
+    featured: false,
+  },
+];
