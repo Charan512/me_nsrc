@@ -40,7 +40,7 @@ export default function Contact() {
             <p className="text-sm md:text-base text-txt-dim mb-16 inline-block cursor-help border-b border-dashed border-accent/50 hover:text-accent transition-colors relative group/tooltip">
               I respond fast. Always.
               <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover/tooltip:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover/tooltip:translate-y-0">
-                Unlike Subaru, I reply on the first timeline
+                Shinzou wo Sasageyo! Dedicate your heart. — AoT
               </span>
             </p>
 

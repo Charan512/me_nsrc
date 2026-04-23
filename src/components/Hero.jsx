@@ -32,9 +32,9 @@ export default function Hero() {
           <p className="text-lg md:text-xl text-txt-mid max-w-2xl leading-loose">
             I build full-stack products, ML pipelines, and REST APIs — from polished UIs to intelligent backends. Calm under pressure, precise in execution.{' '}
             <span className="group relative inline-block cursor-help border-b border-dashed border-txt-dim">
-              Relentless in iteration.
+              Built different.
               <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-bg3 text-white text-xs py-1 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 shadow-lg">
-                Re:Zero — even in loops, keep moving forward
+                I'm gonna be King of the Pirates! — Luffy
               </span>
             </span>
           </p>

@@ -55,38 +55,44 @@ export default function Projects() {
   const cardRefs = useRef([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = Number(entry.target.dataset.index);
-            setActiveIndex(idx);
+    const handleScroll = () => {
+      const stickyTop = window.innerHeight * 0.15; // 15vh
+      let current = 0;
+
+      cardRefs.current.forEach((ref, i) => {
+        if (ref) {
+          const rect = ref.getBoundingClientRect();
+          // A card is "active" when its wrapper top has scrolled past the sticky threshold
+          if (rect.top <= stickyTop + 50) {
+            current = i;
           }
-        });
-      },
-      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
-    );
+        }
+      });
 
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+      setActiveIndex(current);
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <section id="projects" className="relative z-10">
-      <div className="max-w-5xl mx-auto px-6 md:px-12 pt-28 pb-8 flex justify-between items-end">
-        <div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
-          <div className="h-1 w-20 bg-accent rounded-full"></div>
-        </div>
+      <div className="max-w-5xl mx-auto px-6 md:px-12 pt-28 pb-8">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+        <div className="h-1 w-20 bg-accent rounded-full"></div>
+      </div>
 
-        {/* Scroll Counter */}
-        <div className="font-mono text-txt-dim text-sm tracking-widest hidden md:block">
-          <span className="text-white text-2xl font-bold">{String(activeIndex + 1).padStart(2, '0')}</span>
-          <span className="mx-1">/</span>
-          <span>{String(projects.length).padStart(2, '0')}</span>
+      {/* Sticky Scroll Counter — lives outside the header so it persists */}
+      <div className="sticky top-[15vh] z-50 hidden md:block pointer-events-none">
+        <div className="absolute right-8 lg:right-12 top-0 font-mono tracking-widest pointer-events-auto">
+          <div className="bg-bg2/80 backdrop-blur-xl border border-white/10 rounded-2xl px-4 py-5 flex flex-col items-center gap-1 shadow-2xl">
+            <span className="text-white text-2xl font-bold">{String(activeIndex + 1).padStart(2, '0')}</span>
+            <div className="w-4 h-px bg-accent/50"></div>
+            <span className="text-txt-dim text-sm">{String(projects.length).padStart(2, '0')}</span>
+          </div>
         </div>
       </div>
 

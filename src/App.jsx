@@ -47,9 +47,9 @@ function App() {
                 <p className="text-lg md:text-xl text-txt-dim leading-relaxed">
                   Off-screen I'm deep in anime arcs — drawing quiet lessons from loud stories.{' '}
                   <span className="group relative inline-block cursor-help border-b border-dashed border-txt-dim hover:text-accent transition-colors">
-                    Relentless in iteration.
+                    Never settling.
                     <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max bg-accent/10 backdrop-blur-xl border border-accent/30 text-accent font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
-                      Subaru would've given up. I don't.
+                      A lesson without pain is meaningless — FMA
                     </span>
                   </span>
                 </p>
@@ -77,7 +77,7 @@ function App() {
                   <div className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-rose-400 group-hover:to-orange-400 transition-all">∞</div>
                   <div className="text-xs tracking-widest text-txt-dim font-mono uppercase">Episodes</div>
                   <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-max bg-rose-500/10 backdrop-blur-xl border border-rose-500/30 text-rose-300 font-bold text-xs py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl translate-y-2 group-hover:translate-y-0">
-                    Power level: over 9000
+                    The One Piece is real! The adventure never ends. — Whitebeard
                   </span>
                 </div>
               </div>
