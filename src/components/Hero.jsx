@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import ProfileCard from '../reactbits/ProfileCard';
 import EvilEye from '../reactbits/EvilEye';
 import StarBorder from '../reactbits/StarBorder';
+import heroImg from '../assets/hero.jpg';
 
 const allSkills = ['React.js', 'Node.js', 'FastAPI', 'Flutter', 'TensorFlow', 'PostgreSQL', 'MongoDB', 'React Native', 'Scikit-Learn', 'Power BI'];
 const VISIBLE_COUNT = 6;
@@ -132,7 +133,7 @@ export default function Hero() {
             handle="Charan512"
             status="Open to Work"
             contactText="Hire Me"
-            avatarUrl="/me.jpg"
+            avatarUrl={heroImg}
             showUserInfo={true}
             enableTilt={true}
             onContactClick={() => window.location.href = '#contact'}
