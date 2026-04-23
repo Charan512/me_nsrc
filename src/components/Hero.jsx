@@ -133,6 +133,7 @@ export default function Hero() {
             status="Open to Work"
             contactText="Hire Me"
             avatarUrl={heroImg}
+            miniAvatarUrl="/favicon.svg"
             showUserInfo={true}
             enableTilt={true}
             onContactClick={() => window.location.href = '#contact'}
