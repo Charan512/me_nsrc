@@ -39,7 +39,7 @@ function App() {
             <div className="pr-0 lg:pr-10">
               <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">About Me</h2>
               <div className="h-1.5 w-24 bg-gradient-to-r from-accent to-purple-500 rounded-full mb-10"></div>
-              
+
               <div className="pl-6 border-l-2 border-accent/30 space-y-8">
                 <p className="text-xl md:text-2xl text-txt-mid leading-relaxed font-medium">
                   I'm Sri Ram Charan Nalla — a 3rd year AI & ML student at SRKR Engineering College. I'm a full-stack developer who builds complete products: polished React UIs, robust Node/Express/FastAPI backends, and ML systems that actually think.
@@ -59,7 +59,7 @@ function App() {
             <div className="relative mt-12 lg:mt-0">
               {/* Subtle background glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 blur-[100px] rounded-full -z-10 pointer-events-none mix-blend-screen"></div>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-8 rounded-3xl text-center hover:-translate-y-2 hover:border-accent/50 hover:shadow-[0_20px_40px_-15px_rgba(59,158,255,0.3)] transition-all duration-500 group">
                   <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-4 group-hover:from-accent group-hover:to-purple-400 transition-all">Full-Stack</div>
@@ -114,7 +114,7 @@ function App() {
                   <span className="text-accent">/</span> Career Track
                 </h3>
                 <div className="relative pl-8 border-l border-white/10 space-y-12 ml-4">
-                  
+
                   {/* Experience 1 */}
                   <div className="relative group">
                     <div className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-bg border-2 border-accent group-hover:scale-125 group-hover:bg-accent transition-all duration-300 shadow-[0_0_10px_rgba(59,158,255,0.5)]"></div>
@@ -128,7 +128,7 @@ function App() {
                       <ul className="text-txt-dim space-y-4">
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Trained and evaluated supervised ML models on real-world data</span>
+                          <span className="leading-relaxed">Trained and evaluated supervised ML models on real-world data such as Car Price Predictor, Credit Risk etc.,</span>
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
@@ -136,7 +136,7 @@ function App() {
                         </li>
                         <li className="flex items-start gap-3">
                           <span className="text-accent mt-1">▹</span>
-                          <span className="leading-relaxed">Built analytical dashboards and interactive reports using MS Power BI</span>
+                          <span className="leading-relaxed">Built analytical dashboards and interactive reports using MS Power BI for sales analytics, inventory management etc.,</span>
                         </li>
                       </ul>
                     </div>
@@ -151,7 +151,7 @@ function App() {
                   <span className="text-accent">/</span> Hall of Fame
                 </h3>
                 <div className="flex flex-col gap-6">
-                  
+
                   {/* Ach 1 */}
                   <div className="bg-bg2 border border-white/5 p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_40px_-15px_rgba(250,204,21,0.15)]">
                     <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-yellow-400 to-yellow-600"></div>
