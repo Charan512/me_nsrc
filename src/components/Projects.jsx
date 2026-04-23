@@ -127,29 +127,31 @@ export default function Projects() {
                       {project.title}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-4 md:mt-0">
                     {project.demoUrl && (
                       <a 
                         href={project.demoUrl} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className={`px-5 py-2 text-sm font-bold tracking-wide rounded-full border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 ${theme.text}`}
+                        className={`px-4 md:px-5 py-2 text-xs md:text-sm font-bold tracking-wide rounded-full border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 ${theme.text}`}
                       >
-                        {project.demoUrl.endsWith('.apk') ? (
-                          <>
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            Download APK
-                          </>
-                        ) : (
-                          <>
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Live Demo
-                          </>
-                        )}
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Live Demo
+                      </a>
+                    )}
+                    {project.apkUrl && (
+                      <a 
+                        href={project.apkUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`px-4 md:px-5 py-2 text-xs md:text-sm font-bold tracking-wide rounded-full border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 ${theme.text}`}
+                      >
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Download APK
                       </a>
                     )}
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className={`opacity-40 hover:opacity-100 transition-opacity p-2 ${theme.iconColor} hover:brightness-150`}>

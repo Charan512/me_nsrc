@@ -8,6 +8,7 @@ export const projects = [
     year: "2024",
     github: "https://github.com/Charan512",
     demoUrl: "https://ayusethu-ui.vercel.app",
+    apkUrl: "https://github.com/Charan512/AyusethuApp/releases/download/v1.0.0/Ayusethu.Farm.apk",
     featured: true,
   },
   {
@@ -51,6 +52,7 @@ export const projects = [
     highlightTags: ["Flutter", "Mobile"],
     year: "2026",
     github: "https://github.com/Charan512",
+    apkUrl: "https://github.com/Charan512/ManaHospitalUI/releases/download/v1.0.0/Mana.Hospital.apk",
     featured: true,
   }
 ];
