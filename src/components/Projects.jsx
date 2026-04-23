@@ -96,7 +96,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-32 pb-32">
+      <div className="flex flex-col gap-6 md:gap-32 pb-32">
         {projects.map((project, index) => {
           const theme = projectThemes[project.id];
           const Icon = theme.icon;
@@ -106,10 +106,10 @@ export default function Projects() {
             key={project.id}
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
-            className="sticky top-[15vh] transition-transform duration-500"
+            className="relative md:sticky md:top-[15vh] mb-8 md:mb-0 transition-transform duration-500"
             style={{ zIndex: 10 + index }}
           >
-            <div className={`bg-bg2 border border-white/10 rounded-3xl p-8 md:p-12 max-w-5xl mx-auto relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 ${theme.border} ${theme.shadow}`}>
+            <div className={`bg-bg2 border border-white/10 rounded-3xl p-6 md:p-12 max-w-5xl mx-auto relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 ${theme.border} ${theme.shadow}`}>
               
               {/* Massive Watermark Icon */}
               <div className={`absolute -right-8 -top-8 opacity-5 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none transform -rotate-12 ${theme.iconColor}`}>
@@ -135,8 +135,21 @@ export default function Projects() {
                         rel="noopener noreferrer" 
                         className={`px-5 py-2 text-sm font-bold tracking-wide rounded-full border border-white/10 hover:border-white/30 bg-white/5 hover:bg-white/10 transition-colors flex items-center gap-2 ${theme.text}`}
                       >
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                        Live Demo
+                        {project.demoUrl.endsWith('.apk') ? (
+                          <>
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download APK
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Live Demo
+                          </>
+                        )}
                       </a>
                     )}
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className={`opacity-40 hover:opacity-100 transition-opacity p-2 ${theme.iconColor} hover:brightness-150`}>

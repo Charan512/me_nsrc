@@ -40,7 +40,7 @@ export const projects = [
     highlightTags: ["React", "Node.js"],
     year: "2026",
     github: "https://github.com/Charan512",
-    demoUrl: "https://prajwalan-demo.vercel.app", // Replace with your actual working URL
+    demoUrl: "https://prajwalan-2k26.tech",
     featured: false,
   },
   {

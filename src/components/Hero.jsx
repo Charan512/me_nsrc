@@ -54,7 +54,7 @@ export default function Hero() {
             // full-stack developer · ml engineer
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-normal leading-snug" style={{ textShadow: '0 4px 30px rgba(3,6,14,0.9)' }}>
+          <h1 className="text-4xl md:text-7xl font-extrabold tracking-normal leading-tight md:leading-snug" style={{ textShadow: '0 4px 30px rgba(3,6,14,0.9)' }}>
             Sri Ram <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-400" style={{ textShadow: 'none' }}>Charan.</span>
           </h1>
 
@@ -124,8 +124,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center lg:justify-end"
-          style={{ height: '540px' }}
+          className="relative flex justify-center lg:justify-end h-[420px] md:h-[540px] w-full"
         >
           <ProfileCard
             name="Sri Ram Charan Nalla"
