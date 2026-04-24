@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "AyuSethu Ecosystem",
-    description: "Enterprise agricultural supply chain platform with FastAPI ML inference (96.6% accuracy on 92 herbs), Express/MongoDB backend, IPFS pinning, and Flutter voice-first mobile app.",
+    description: "A comprehensive B2B supply chain ecosystem connecting farmers directly with Ayurveda manufacturers. Features secure contract farming, real-time inventory tracking, decentralized IPFS storage for immutable agreements, and a voice-enabled Flutter app for farmers, supported by an auxiliary ML herb-classification model.",
     tags: ["FastAPI", "React", "Flutter", "MongoDB", "Express.js", "ML"],
     highlightTags: ["FastAPI", "ML"],
     year: "2024",

@@ -109,7 +109,7 @@ export default function Projects() {
             className="relative md:sticky md:top-[15vh] mb-8 md:mb-0 transition-transform duration-500"
             style={{ zIndex: 10 + index }}
           >
-            <div className={`bg-bg2 border border-white/10 rounded-3xl p-6 md:p-12 max-w-5xl mx-auto relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 ${theme.border} ${theme.shadow}`}>
+            <div className={`bg-bg2 border border-white/10 rounded-3xl p-6 md:p-12 max-w-5xl mx-auto h-[550px] md:h-[420px] flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-2xl bg-opacity-95 backdrop-blur-xl hover:-translate-y-2 ${theme.border} ${theme.shadow}`}>
               
               {/* Massive Watermark Icon */}
               <div className={`absolute -right-8 -top-8 opacity-5 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none transform -rotate-12 ${theme.iconColor}`}>
@@ -119,7 +119,7 @@ export default function Projects() {
               {/* Thematic gradient overlay */}
               <div className={`absolute inset-0 bg-gradient-to-br ${theme.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
 
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <span className="text-txt-dim font-mono text-sm tracking-wider uppercase mb-1 block">{project.year}</span>
@@ -164,7 +164,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 mt-auto">
                   {project.tags.map(tag => (
                     <span key={tag} className={`px-4 py-2 text-xs font-mono rounded-xl bg-bg3 border border-white/5 transition-all duration-300 group-hover:border-white/10 hover:!border-current ${theme.tagText} ${theme.text}`}>
                       {tag}
