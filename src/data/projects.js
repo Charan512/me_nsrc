@@ -14,7 +14,7 @@ export const projects = [
   {
     id: 2,
     title: "Soul Connect",
-    description: "AI mental health assistant with NLP sentiment/emotion detection, fuzzy logic, LLM responses, real-time chat & emergency alerts.",
+    description: "An empathetic AI mental health companion designed to provide real-time emotional support. Engineered with advanced NLP for nuanced sentiment detection, integrating fuzzy logic to dynamically assess user distress levels. Features conversational AI via LLMs, secure journaling, and an automated emergency alert protocol.",
     tags: ["FastAPI", "React", "MongoDB", "NLP", "LLM"],
     highlightTags: ["FastAPI", "NLP"],
     year: "2024",
@@ -25,7 +25,7 @@ export const projects = [
   {
     id: 3,
     title: "SmartSpend",
-    description: "Intelligent expense tracker with Next.js 15, FastAPI, Tesseract OCR for receipts, natural language chat inputs, and predictive budgets.",
+    description: "A next-generation personal finance dashboard automating expense tracking. Utilizes Tesseract OCR to instantly extract data from receipt images and features an intuitive natural language chat interface for conversational logging, alongside algorithms that analyze spending habits to generate adaptive monthly budgets.",
     tags: ["Next.js", "FastAPI", "OCR", "SQLAlchemy", "AI"],
     highlightTags: ["Next.js", "OCR"],
     year: "2025",
