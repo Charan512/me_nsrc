@@ -23,6 +23,13 @@
   --color-accent-dim: #1d4ed8;
   --color-accent-glow: #3b9eff33;
   --accent-rgb: 59,158,255;
+  /* Contrast color for Resume dock button — defaults to emerald (original) */
+  --color-contrast: #34d399;
+  --color-contrast-dim: #059669;
+  --contrast-rgb: 52,211,153;
+  /* Hero ProfileCard image tint defaults */
+  --card-glow-color: rgba(59,158,255,0.60);
+  --card-inner-gradient: linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%);
 }
 
 html {
