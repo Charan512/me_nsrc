@@ -1,21 +1,27 @@
 /**
  * AccentContext — Per-load accent color randomizer
  *
- * Picks 1 of 10 curated dark-mode accent colors on each page load.
- * Uses sessionStorage so the color stays stable during a session
- * but changes on every new load / refresh.
+ * Picks 1 of 5 curated dark-mode accent colors on each page load.
+ * The original electric blue (#3b9eff) is always in the palette.
+ * Uses random selection so a new color appears every refresh.
  *
  * Only the accent color rotates. All other section-specific colors
  * (Contact emerald, project-card per-project colors, etc.) are unaffected.
+ *
+ * behindGlowColor: controls the ProfileCard image tint in Hero so it
+ * vibes with the accent color just like the original bluish tint.
  */
 
 export const ACCENT_PALETTE = [
   {
-    name: 'electric-blue',
+    name: 'electric-blue',   // the original
     hex: '#3b9eff',
     rgb: '59,158,255',
     dim: '#1d4ed8',
     glow: '#3b9eff33',
+    // Original bluish tint that vibe with the hero image
+    cardGlow: 'rgba(59,158,255,0.60)',
+    cardInnerGradient: 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)',
   },
   {
     name: 'violet',
@@ -23,13 +29,8 @@ export const ACCENT_PALETTE = [
     rgb: '168,85,247',
     dim: '#7c3aed',
     glow: '#a855f733',
-  },
-  {
-    name: 'cyan',
-    hex: '#06b6d4',
-    rgb: '6,182,212',
-    dim: '#0e7490',
-    glow: '#06b6d433',
+    cardGlow: 'rgba(168,85,247,0.55)',
+    cardInnerGradient: 'linear-gradient(145deg,#3b1f6e8c 0%,#c084fc44 100%)',
   },
   {
     name: 'rose',
@@ -37,6 +38,8 @@ export const ACCENT_PALETTE = [
     rgb: '244,63,94',
     dim: '#be123c',
     glow: '#f43f5e33',
+    cardGlow: 'rgba(244,63,94,0.50)',
+    cardInnerGradient: 'linear-gradient(145deg,#6e1f2a8c 0%,#fb7185 44 100%)',
   },
   {
     name: 'amber',
@@ -44,6 +47,8 @@ export const ACCENT_PALETTE = [
     rgb: '245,158,11',
     dim: '#b45309',
     glow: '#f59e0b33',
+    cardGlow: 'rgba(245,158,11,0.45)',
+    cardInnerGradient: 'linear-gradient(145deg,#6e4a1f8c 0%,#fcd34d44 100%)',
   },
   {
     name: 'teal',
@@ -51,34 +56,8 @@ export const ACCENT_PALETTE = [
     rgb: '20,184,166',
     dim: '#0f766e',
     glow: '#14b8a633',
-  },
-  {
-    name: 'indigo',
-    hex: '#6366f1',
-    rgb: '99,102,241',
-    dim: '#4338ca',
-    glow: '#6366f133',
-  },
-  {
-    name: 'lime',
-    hex: '#84cc16',
-    rgb: '132,204,22',
-    dim: '#4d7c0f',
-    glow: '#84cc1633',
-  },
-  {
-    name: 'orange',
-    hex: '#f97316',
-    rgb: '249,115,22',
-    dim: '#c2410c',
-    glow: '#f9731633',
-  },
-  {
-    name: 'fuchsia',
-    hex: '#e879f9',
-    rgb: '232,121,249',
-    dim: '#a21caf',
-    glow: '#e879f933',
+    cardGlow: 'rgba(20,184,166,0.52)',
+    cardInnerGradient: 'linear-gradient(145deg,#1f4a468c 0%,#5eead444 100%)',
   },
 ];
 
@@ -89,7 +68,6 @@ const SESSION_KEY = 'portfolio_accent_idx';
  * Call this BEFORE React renders to avoid any flash.
  */
 export function initAccent() {
-  // Always pick a new random index on every load
   const idx = Math.floor(Math.random() * ACCENT_PALETTE.length);
   sessionStorage.setItem(SESSION_KEY, String(idx));
   return ACCENT_PALETTE[idx];
@@ -115,4 +93,7 @@ export function applyAccentToDOM(accent) {
   root.style.setProperty('--color-accent-dim', accent.dim);
   root.style.setProperty('--color-accent-glow', accent.glow);
   root.style.setProperty('--accent-rgb', accent.rgb);
+  // Card glow for ProfileCard tint — read by Hero.jsx at runtime
+  root.style.setProperty('--card-glow-color', accent.cardGlow);
+  root.style.setProperty('--card-inner-gradient', accent.cardInnerGradient);
 }

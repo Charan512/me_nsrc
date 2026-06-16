@@ -27,6 +27,14 @@ export default function Hero() {
   const [showAll, setShowAll] = useState(false);
   const visibleSkills = showAll ? allSkills : allSkills.slice(0, VISIBLE_COUNT);
 
+  // Read accent-derived tint values that AccentContext set on <html> before React mounted
+  const cardGlow = typeof document !== 'undefined'
+    ? getComputedStyle(document.documentElement).getPropertyValue('--card-glow-color').trim() || 'rgba(59,158,255,0.60)'
+    : 'rgba(59,158,255,0.60)';
+  const cardInnerGradient = typeof document !== 'undefined'
+    ? getComputedStyle(document.documentElement).getPropertyValue('--card-inner-gradient').trim() || 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)'
+    : 'linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)';
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-48 px-6 md:px-12 overflow-hidden">
 
@@ -129,6 +137,8 @@ export default function Hero() {
             miniAvatarUrl="/favicon.svg"
             showUserInfo={true}
             enableTilt={true}
+            behindGlowColor={cardGlow}
+            innerGradient={cardInnerGradient}
             onContactClick={() => window.location.href = '#contact'}
           />
         </motion.div>

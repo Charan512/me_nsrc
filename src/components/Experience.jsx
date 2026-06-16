@@ -26,18 +26,31 @@ const experiences = [
     period: 'May 2026 – Present',
     active: true,
     role: 'AI Intern',
-    company: 'Stikbook Pvt. Ltd.',
+    company: 'Stikbook Inc.',
     location: 'Remote',
     bullets: [
-      'Performed data analytics and built visualisations using Python and Google Colab to support data-driven decision making across engineering workflows.',
-      'Contributed to project planning sessions and team reviews, gaining structured exposure to startup collaboration and product development processes.',
-      'Conducted domain research and prepared analytical reports, translating findings into clear insights to support engineering and business objectives.',
-      'Managed code and analysis artifacts with Git, maintaining clean version history across collaborative assignments and simulated tasks.',
+      'Automated high-volume data pipelines using n8n, enabling the rapid acquisition, cleaning, and preprocessing of dozens of diverse datasets without manual bottlenecks.',
+      'Engineered generalized Exploratory Data Analysis (EDA) scripts to automatically extract statistical features and visualize distributions across varying data structures.',
+      'Accelerated model experimentation by building scalable training loops for both classical ML (scikit-learn) and neural networks (TensorFlow), rapidly evaluating baselines at scale.',
     ],
-    tags: ['Python', 'Google Colab', 'Data Analytics', 'Data Visualisation', 'Git'],
+    tags: ['Python', 'n8n', 'EDA', 'TensorFlow', 'Scikit-learn', 'Data Pipelines'],
   },
   {
     id: 2,
+    period: 'Oct 2025 – Feb 2026',
+    active: false,
+    role: 'AI/ML Engineer Intern',
+    company: 'Shamgar Software Solutions',
+    location: 'Remote',
+    bullets: [
+      'Engineered a Random Forest yield predictor (97.6% R²) and Gradio app on 19.6K+ records, optimizing accuracy by resolving data leakage and creating interaction features.',
+      'Trained an EEG signal classifier for Brain-Computer Interfaces, iteratively optimizing the model to boost peak validation accuracy to 78.24% from a 50% baseline.',
+      'Spearheaded data processing and exploratory data analysis on an EMG dataset, extracting key features and resolving dataset inconsistencies for a prosthetic control model.',
+    ],
+    tags: ['Python', 'Random Forest', 'Gradio', 'EEG/EMG', 'Scikit-learn', 'EDA'],
+  },
+  {
+    id: 3,
     period: 'April 2026 – Present',
     active: true,
     role: 'AI Training Specialist',
@@ -46,16 +59,17 @@ const experiences = [
     bullets: [
       'Successfully completed the rigorous Training & Evaluation phase to join the vetted Deccan AI Experts network.',
       'Evaluated and refined large language models via human-in-the-loop workflows, ensuring high accuracy, logical consistency, and adherence to complex technical constraints.',
-      'Participated in The Catalyst Hackathon, contributing to the development of an AI-driven talent scouting agent.',
+      'Participated in The Catalyst Hackathon, architecting Talent Radar — an autonomous multi-agent AI recruitment engine — within 48 hours, securing 2nd place among 500+ developers.',
     ],
     tags: ['LLM Evaluation', 'RLHF', 'Prompt Engineering'],
   },
 ];
 
 const certifications = [
+  { label: 'Google AI-ML Virtual Internship', issuer: 'Eduskills Foundation' },
+  { label: 'IBM Deep Learning Fundamentals', issuer: 'IBM' },
   { label: 'Cisco Python Essentials 1', issuer: 'Cisco' },
   { label: 'Cisco Python Essentials 2', issuer: 'Cisco' },
-  { label: 'IBM Deep Learning Fundamentals', issuer: 'IBM' },
 ];
 
 export default function Experience() {
@@ -161,7 +175,7 @@ export default function Experience() {
         <p className="font-mono text-accent text-xs tracking-widest uppercase mb-3">/ credentials</p>
         <h3 className="text-xl sm:text-2xl font-bold text-white mb-8">Certifications</h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.label}

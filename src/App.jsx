@@ -78,7 +78,7 @@ function App() {
                     <div className="text-[10px] md:text-xs tracking-widest text-txt-dim font-mono uppercase">Vision / NLP / Agents</div>
                   </div>
                   <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-5 md:p-8 rounded-2xl md:rounded-3xl text-center hover:-translate-y-2 hover:border-emerald-500/50 hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)] transition-all duration-500 group">
-                    <div className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-2 md:mb-4 group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all">8.87</div>
+                    <div className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 mb-2 md:mb-4 group-hover:from-emerald-400 group-hover:to-cyan-400 transition-all">8.71</div>
                     <div className="text-[10px] md:text-xs tracking-widest text-txt-dim font-mono uppercase">Current CGPA</div>
                   </div>
                   <div className="bg-bg2/80 backdrop-blur-md border border-white/5 p-5 md:p-8 rounded-2xl md:rounded-3xl text-center hover:-translate-y-2 hover:border-rose-500/50 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)] transition-all duration-500 group relative">
