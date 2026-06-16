@@ -13,30 +13,61 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onA
   const widthSync = useTransform(distance, [-150, 0, 150], [40, 84, 40]);
   const width = useSpring(widthSync, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  // Base classes shared across all states
-  const baseClass = 'relative flex aspect-square items-center justify-center rounded-full backdrop-blur-xl border group shadow-lg transition-all duration-200';
+  /*
+   * Strategy: CSS custom properties (--_*) are declared on the element via inline style.
+   * They have NO specificity over computed properties — they are just variable values.
+   * The actual background/border/color are applied via className (Tailwind arbitrary values
+   * referencing the vars), so :hover classes CAN override them without a specificity fight.
+   *
+   * The Framer Motion `style` prop ONLY receives the animated `width` MotionValue plus
+   * CSS var declarations. This keeps the animation path clean.
+   */
+  const colorVars = isActive
+    ? {
+        '--_bg':           'color-mix(in srgb, var(--color-accent) 80%, transparent)',
+        '--_border':       'var(--color-accent)',
+        '--_color':        '#ffffff',
+        '--_shadow':       '0 0 20px color-mix(in srgb, var(--color-accent) 60%, transparent)',
+        '--_hover-bg':     'var(--color-accent)',
+        '--_hover-border': 'var(--color-accent)',
+        '--_hover-color':  '#ffffff',
+      }
+    : external
+    ? {
+        '--_bg':           'color-mix(in srgb, var(--color-contrast) 12%, transparent)',
+        '--_border':       'color-mix(in srgb, var(--color-contrast) 40%, transparent)',
+        '--_color':        'color-mix(in srgb, var(--color-contrast) 90%, white)',
+        '--_shadow':       'none',
+        '--_hover-bg':     'var(--color-contrast)',
+        '--_hover-border': 'var(--color-contrast)',
+        '--_hover-color':  '#03060e',
+      }
+    : {
+        '--_bg':           'rgba(255,255,255,0.10)',
+        '--_border':       'rgba(255,255,255,0.20)',
+        '--_color':        'rgba(255,255,255,0.80)',
+        '--_shadow':       'none',
+        '--_hover-bg':     'var(--color-accent)',
+        '--_hover-border': 'var(--color-accent)',
+        '--_hover-color':  '#ffffff',
+      };
 
-  // Per-state inline styles — CSS vars resolve to the accent/contrast set by AccentContext
-  const activeStyle = {
-    background: 'color-mix(in srgb, var(--color-accent) 80%, transparent)',
-    borderColor: 'var(--color-accent)',
-    color: '#fff',
-    boxShadow: '0 0 20px color-mix(in srgb, var(--color-accent) 60%, transparent)',
-  };
+  /*
+   * `width` is the only MotionValue — Framer Motion handles it directly
+   * without going through React on every animation frame.
+   */
+  const motionStyle = { width, ...colorVars };
 
-  const externalStyle = {
-    background: 'color-mix(in srgb, var(--color-contrast) 12%, transparent)',
-    borderColor: 'color-mix(in srgb, var(--color-contrast) 35%, transparent)',
-    color: 'color-mix(in srgb, var(--color-contrast) 90%, white)',
-  };
-
-  const normalStyle = {
-    background: 'rgba(255,255,255,0.10)',
-    borderColor: 'rgba(255,255,255,0.20)',
-    color: 'rgba(255,255,255,0.80)',
-  };
-
-  const resolvedStyle = isActive ? activeStyle : external ? externalStyle : normalStyle;
+  const className = [
+    'relative flex aspect-square items-center justify-center rounded-full',
+    'backdrop-blur-xl border group shadow-lg',
+    'transition-colors duration-150',
+    /* apply CSS vars as actual visual properties — hover can override these */
+    '[background:var(--_bg)] [border-color:var(--_border)] [color:var(--_color)]',
+    '[box-shadow:var(--_shadow)]',
+    'hover:[background:var(--_hover-bg)] hover:[border-color:var(--_hover-border)]',
+    'hover:[color:var(--_hover-color)]',
+  ].join(' ');
 
   const children = (
     <>
@@ -55,23 +86,16 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onA
     </>
   );
 
-  // Hover override via CSS — inject a data-external attribute to drive :hover styles
-  const hoverStyle = external
-    ? { '--hover-bg': 'var(--color-contrast)', '--hover-border': 'var(--color-contrast)' }
-    : { '--hover-bg': 'var(--color-accent)', '--hover-border': 'var(--color-accent)' };
-
-  const combinedStyle = { width, ...resolvedStyle, ...hoverStyle };
-
-  const sharedProps = {
-    ref,
-    'aria-label': label,
-    style: combinedStyle,
-    className: `${baseClass} hover:[background:var(--hover-bg)] hover:[border-color:var(--hover-border)] hover:text-bg`,
-  };
-
   if (onAction) {
     return (
-      <motion.button {...sharedProps} onClick={onAction} type="button">
+      <motion.button
+        ref={ref}
+        type="button"
+        aria-label={label}
+        style={motionStyle}
+        className={className}
+        onClick={onAction}
+      >
         {children}
       </motion.button>
     );
@@ -79,10 +103,13 @@ function DockItem({ icon: Icon, label, href, id, activeId, mouseX, external, onA
 
   return (
     <motion.a
-      {...sharedProps}
+      ref={ref}
       href={href}
+      aria-label={label}
       target={external ? '_blank' : undefined}
       rel={external ? 'noopener noreferrer' : undefined}
+      style={motionStyle}
+      className={className}
     >
       {children}
     </motion.a>
