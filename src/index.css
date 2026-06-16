@@ -2,13 +2,14 @@
 
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --color-bg: #03060e;
   --color-bg2: #0f172a;
   --color-bg3: #1e293b;
-  --color-accent: #3b9eff;
-  --color-accent-dim: #1d4ed8;
-  --color-accent-glow: #3b9eff33;
+  /* accent tokens reference CSS vars so JS overrides propagate to Tailwind classes */
+  --color-accent: var(--color-accent);
+  --color-accent-dim: var(--color-accent-dim);
+  --color-accent-glow: var(--color-accent-glow);
   --color-txt: #f8fafc;
   --color-txt-mid: #94a3b8;
   --color-txt-dim: #64748b;
@@ -16,7 +17,13 @@
   --font-sans: 'Inter', sans-serif;
 }
 
-/* Tailwind v4 includes its own preflight reset, no need for a manual one */
+/* Runtime-overridable accent defaults — JS sets these before React mounts */
+:root {
+  --color-accent: #3b9eff;
+  --color-accent-dim: #1d4ed8;
+  --color-accent-glow: #3b9eff33;
+  --accent-rgb: 59,158,255;
+}
 
 html {
   scroll-behavior: smooth;
@@ -24,10 +31,10 @@ html {
   max-width: 100%;
 }
 
-body { 
-  background: var(--color-bg); 
-  color: var(--color-txt); 
-  font-family: var(--font-sans); 
+body {
+  background: var(--color-bg);
+  color: var(--color-txt);
+  font-family: var(--font-sans);
   overflow-x: clip;
   max-width: 100%;
   -webkit-font-smoothing: antialiased;
