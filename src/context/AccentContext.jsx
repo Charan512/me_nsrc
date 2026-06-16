@@ -17,7 +17,7 @@ export const ACCENT_PALETTE = [
     rgb: '59,158,255',
     dim: '#1d4ed8',
     glow: '#3b9eff33',
-    // contrast: emerald — was always emerald vs blue, keep it
+    // companion: emerald — original pairing, keep it
     contrastHex: '#34d399',
     contrastRgb: '52,211,153',
     contrastDim: '#059669',
@@ -30,10 +30,10 @@ export const ACCENT_PALETTE = [
     rgb: '212,163,115',
     dim: '#a07840',
     glow: '#d4a37333',
-    // contrast: violet — cold vs warm
-    contrastHex: '#a78bfa',
-    contrastRgb: '167,139,250',
-    contrastDim: '#7c3aed',
+    // companion: soft teal — warm earth → cool water, adjacent feel
+    contrastHex: '#5eead4',
+    contrastRgb: '94,234,212',
+    contrastDim: '#0f766e',
     cardGlow: 'rgba(212,163,115,0.52)',
     cardInnerGradient: 'linear-gradient(145deg,#5e3a1a8c 0%,#d4a37344 100%)',
   },
@@ -43,10 +43,10 @@ export const ACCENT_PALETTE = [
     rgb: '244,63,94',
     dim: '#be123c',
     glow: '#f43f5e33',
-    // contrast: cyan — cool vs hot
-    contrastHex: '#22d3ee',
-    contrastRgb: '34,211,238',
-    contrastDim: '#0e7490',
+    // companion: amber — red → orange-yellow, warm family
+    contrastHex: '#fbbf24',
+    contrastRgb: '251,191,36',
+    contrastDim: '#d97706',
     cardGlow: 'rgba(244,63,94,0.52)',
     cardInnerGradient: 'linear-gradient(145deg,#6e1f2a8c 0%,#fb718544 100%)',
   },
@@ -56,10 +56,10 @@ export const ACCENT_PALETTE = [
     rgb: '16,185,129',
     dim: '#059669',
     glow: '#10b98133',
-    // contrast: amber/gold — warm vs cool green
-    contrastHex: '#fbbf24',
-    contrastRgb: '251,191,36',
-    contrastDim: '#d97706',
+    // companion: sky blue — green → blue, natural adjacent step
+    contrastHex: '#38bdf8',
+    contrastRgb: '56,189,248',
+    contrastDim: '#0284c7',
     cardGlow: 'rgba(16,185,129,0.52)',
     cardInnerGradient: 'linear-gradient(145deg,#1a4a3a8c 0%,#6ee7b744 100%)',
   },
@@ -69,10 +69,10 @@ export const ACCENT_PALETTE = [
     rgb: '56,189,248',
     dim: '#0284c7',
     glow: '#38bdf833',
-    // contrast: orange — warm vs cool sky
-    contrastHex: '#fb923c',
-    contrastRgb: '251,146,60',
-    contrastDim: '#c2410c',
+    // companion: violet — blue → purple, adjacent hue
+    contrastHex: '#a78bfa',
+    contrastRgb: '167,139,250',
+    contrastDim: '#7c3aed',
     cardGlow: 'rgba(56,189,248,0.55)',
     cardInnerGradient: 'linear-gradient(145deg,#1a3a508c 0%,#7dd3fc44 100%)',
   },

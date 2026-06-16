@@ -23,20 +23,6 @@ const certVariants = {
 const experiences = [
   {
     id: 1,
-    period: 'May 2026 – Present',
-    active: true,
-    role: 'AI Intern',
-    company: 'Stikbook Inc.',
-    location: 'Remote',
-    bullets: [
-      'Automated high-volume data pipelines using n8n, enabling the rapid acquisition, cleaning, and preprocessing of dozens of diverse datasets without manual bottlenecks.',
-      'Engineered generalized Exploratory Data Analysis (EDA) scripts to automatically extract statistical features and visualize distributions across varying data structures.',
-      'Accelerated model experimentation by building scalable training loops for both classical ML (scikit-learn) and neural networks (TensorFlow), rapidly evaluating baselines at scale.',
-    ],
-    tags: ['Python', 'n8n', 'EDA', 'TensorFlow', 'Scikit-learn', 'Data Pipelines'],
-  },
-  {
-    id: 2,
     period: 'Oct 2025 – Feb 2026',
     active: false,
     role: 'AI/ML Engineer Intern',
@@ -50,7 +36,7 @@ const experiences = [
     tags: ['Python', 'Random Forest', 'Gradio', 'EEG/EMG', 'Scikit-learn', 'EDA'],
   },
   {
-    id: 3,
+    id: 2,
     period: 'April 2026 – Present',
     active: true,
     role: 'AI Training Specialist',
@@ -62,6 +48,20 @@ const experiences = [
       'Participated in The Catalyst Hackathon, architecting Talent Radar — an autonomous multi-agent AI recruitment engine — within 48 hours, securing 2nd place among 500+ developers.',
     ],
     tags: ['LLM Evaluation', 'RLHF', 'Prompt Engineering'],
+  },
+  {
+    id: 3,
+    period: 'May 2026 – Present',
+    active: true,
+    role: 'AI Intern',
+    company: 'Stikbook Inc.',
+    location: 'Remote',
+    bullets: [
+      'Automated high-volume data pipelines using n8n, enabling the rapid acquisition, cleaning, and preprocessing of dozens of diverse datasets without manual bottlenecks.',
+      'Engineered generalized Exploratory Data Analysis (EDA) scripts to automatically extract statistical features and visualize distributions across varying data structures.',
+      'Accelerated model experimentation by building scalable training loops for both classical ML (scikit-learn) and neural networks (TensorFlow), rapidly evaluating baselines at scale.',
+    ],
+    tags: ['Python', 'n8n', 'EDA', 'TensorFlow', 'Scikit-learn', 'Data Pipelines'],
   },
 ];
 
