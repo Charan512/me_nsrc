@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="py-10 border-t border-white/5 relative z-10 bg-bg pb-28">
+    <footer className="py-10 border-t border-white/5 relative z-10 bg-bg">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-txt-dim font-mono text-sm">
           Sri Ram Charan Nalla © 2026
