@@ -51,15 +51,15 @@ const experiences = [
   },
   {
     id: 3,
-    period: 'May 2026 – Present',
-    active: true,
+    period: 'May 2026 – July 2026',
+    active: false,
     role: 'AI Intern',
     company: 'Stikbook Inc.',
     location: 'Remote',
     bullets: [
-      'Automated high-volume data pipelines using n8n, enabling the rapid acquisition, cleaning, and preprocessing of dozens of diverse datasets without manual bottlenecks.',
-      'Engineered generalized Exploratory Data Analysis (EDA) scripts to automatically extract statistical features and visualize distributions across varying data structures.',
-      'Accelerated model experimentation by building scalable training loops for both classical ML (scikit-learn) and neural networks (TensorFlow), rapidly evaluating baselines at scale.',
+      'Engineered scalable training loops (scikit-learn, TensorFlow) for a core recommendation system, accelerating baseline evaluation and cutting model experimentation time by 92.23%.',
+      'Architected automated data pipelines via n8n to ingest, clean, and preprocess 2,000+ user-interaction records, eliminating 16 hours of manual bottlenecks per week.',
+      'Developed generalized Exploratory Data Analysis (EDA) scripts to automate statistical feature extraction and distribution visualization, reducing initial data discovery time for the engineering team by [X]%.',
     ],
     tags: ['Python', 'n8n', 'EDA', 'TensorFlow', 'Scikit-learn', 'Data Pipelines'],
   },
@@ -109,9 +109,8 @@ export default function Experience() {
               {/* Timeline node */}
               <div className="hidden md:flex flex-col items-center shrink-0 w-[3.7rem]">
                 <div
-                  className={`relative z-10 w-4 h-4 rounded-full border-2 border-accent mt-1 shadow-[0_0_12px_rgba(59,158,255,0.5)] transition-all duration-300 ${
-                    exp.active ? 'bg-accent animate-pulse' : 'bg-bg'
-                  }`}
+                  className={`relative z-10 w-4 h-4 rounded-full border-2 border-accent mt-1 shadow-[0_0_12px_rgba(59,158,255,0.5)] transition-all duration-300 ${exp.active ? 'bg-accent animate-pulse' : 'bg-bg'
+                    }`}
                 />
               </div>
 
