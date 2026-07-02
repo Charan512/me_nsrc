@@ -59,7 +59,7 @@ const experiences = [
     bullets: [
       'Engineered scalable training loops (scikit-learn, TensorFlow) for a core recommendation system, accelerating baseline evaluation and cutting model experimentation time by 92.23%.',
       'Architected automated data pipelines via n8n to ingest, clean, and preprocess 2,000+ user-interaction records, eliminating 16 hours of manual bottlenecks per week.',
-      'Developed generalized Exploratory Data Analysis (EDA) scripts to automate statistical feature extraction and distribution visualization, reducing initial data discovery time for the engineering team by [X]%.',
+      'Developed generalized Exploratory Data Analysis (EDA) scripts to automate statistical feature extraction and distribution visualization, reducing initial data discovery time for the engineering team by 40%.',
     ],
     tags: ['Python', 'n8n', 'EDA', 'TensorFlow', 'Scikit-learn', 'Data Pipelines'],
   },
