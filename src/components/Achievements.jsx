@@ -67,6 +67,16 @@ const smallAchievements = [
     hoverBorderClass: 'hover:border-yellow-500/30',
   },
   {
+    id: 7,
+    badge: '2nd Place',
+    title: 'Catalyst Solo Hackathon',
+    description: 'Outperformed 500+ developers in the Deccan AI Experts competition by architecting Talent Radar, an autonomous multi-agent AI recruitment engine, within 48 hours.',
+    Icon: GiTrophyCup,
+    badgeClass: 'border-emerald-500/20 bg-emerald-500/10 text-emerald-400',
+    iconClass: 'text-emerald-500/60',
+    hoverBorderClass: 'hover:border-emerald-500/30',
+  },
+  {
     id: 4,
     badge: 'Tech Team',
     title: 'ACE Executive Member',
