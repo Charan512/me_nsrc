@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import { ResumeModalProvider } from "@/context/ResumeModalContext";
 import ResumeModal from "@/components/ResumeModal";
 import Navbar from "@/components/Navbar";
@@ -53,6 +54,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-5LP269EFRE" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5LP269EFRE');
+          `}
+        </Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
