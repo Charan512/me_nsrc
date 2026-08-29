@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #03060e;
+  --color-bg2: #0f172a;
+  --color-bg3: #1e293b;
+  /* accent tokens reference CSS vars so JS overrides propagate to Tailwind classes */
+  --color-accent: var(--color-accent);
+  --color-accent-dim: var(--color-accent-dim);
+  --color-accent-glow: var(--color-accent-glow);
+  --color-txt: #f8fafc;
+  --color-txt-mid: #94a3b8;
+  --color-txt-dim: #64748b;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Runtime-overridable accent defaults — JS sets these before React mounts */
+:root {
+  --color-accent: #3b9eff;
+  --color-accent-dim: #1d4ed8;
+  --color-accent-glow: #3b9eff33;
+  --accent-rgb: 59,158,255;
+  /* Contrast color for Resume dock button — defaults to emerald (original) */
+  --color-contrast: #34d399;
+  --color-contrast-dim: #059669;
+  --contrast-rgb: 52,211,153;
+  /* Hero ProfileCard image tint defaults */
+  --card-glow-color: rgba(59,158,255,0.60);
+  --card-inner-gradient: linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%);
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-txt);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+::selection {
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dim);
+}
