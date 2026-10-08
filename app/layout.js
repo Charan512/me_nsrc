@@ -4,6 +4,8 @@ import { ResumeModalProvider } from "@/context/ResumeModalContext";
 import ResumeModal from "@/components/ResumeModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   metadataBase: new URL("https://nsrcharan.vercel.app"),
@@ -132,6 +134,8 @@ export default function RootLayout({ children }) {
             <ResumeModal />
           </div>
         </ResumeModalProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
